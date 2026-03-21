@@ -117,9 +117,9 @@ export default function Home({ setCurrentView }: HomeProps) {
                   <h3 className="font-display text-4xl md:text-5xl uppercase text-white mb-2">Feeding the Crew?</h3>
                   <p className="font-sub text-white/80 text-lg uppercase tracking-wider">Get the Lavash Tray • Feeds 10-12 People</p>
                 </div>
-                <button onClick={() => setCurrentView('catering')} className="bg-white text-primary hover:bg-black hover:text-white font-display text-xl px-8 py-4 uppercase tracking-wider transition-colors min-w-fit">
-                  Order Feast
-                </button>
+                <a href="tel:+17344951115" className="bg-white text-primary hover:bg-black hover:text-white font-display text-xl px-8 py-4 uppercase tracking-wider transition-colors min-w-fit text-center">
+                  Call to Order
+                </a>
               </div>
             </div>
           </div>
