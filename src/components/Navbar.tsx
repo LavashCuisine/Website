@@ -1,6 +1,6 @@
-import React from 'react';
-import { Flame, Menu as MenuIcon, Search } from 'lucide-react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { Flame, Menu as MenuIcon, Search, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface NavbarProps {
   currentView: string;
@@ -8,21 +8,27 @@ interface NavbarProps {
 }
 
 export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  function navigate(view: string) {
+    setCurrentView(view);
+    setMobileOpen(false);
+  }
+
   return (
     <nav className="fixed top-0 w-full z-40 border-b border-border-hard bg-[#0a0a0a]">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-24 flex items-center justify-between">
-        <div 
+        <div
           className="flex items-center cursor-pointer relative z-50"
-          onClick={() => setCurrentView('home')}
+          onClick={() => navigate('home')}
         >
           <div className="relative h-32 -my-4 flex items-center justify-center">
-            <img 
-              src="/40d5f3fe-bf32-42eb-8908-98dd60b9e62e.PNG" 
+            <img
+              src="/40d5f3fe-bf32-42eb-8908-98dd60b9e62e.PNG"
               alt="Lavash Logo"
               className="h-full w-auto object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.1)]"
             />
-            {/* Sweeping light effect overlay (GPU Accelerated for smoothness) */}
-            <div 
+            <div
               className="absolute inset-0 pointer-events-none overflow-hidden"
               style={{
                 WebkitMaskImage: 'url("/40d5f3fe-bf32-42eb-8908-98dd60b9e62e.PNG")',
@@ -31,20 +37,13 @@ export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
                 WebkitMaskPosition: 'center',
               }}
             >
-              <motion.div 
+              <motion.div
                 className="absolute top-0 bottom-0 w-[150%] -left-[150%]"
                 style={{
                   backgroundImage: 'linear-gradient(105deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%)',
                 }}
-                animate={{
-                  x: ['0%', '200%'],
-                }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  repeatDelay: 1.5
-                }}
+                animate={{ x: ['0%', '200%'] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 1.5 }}
               />
             </div>
           </div>
@@ -53,9 +52,9 @@ export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
         {currentView === 'home' || currentView === 'catering' ? (
           <>
             <div className="hidden md:flex items-center gap-8 font-sub uppercase tracking-wider text-sm text-text-smoke">
-              <button onClick={() => setCurrentView('menu')} className="hover:text-primary transition-colors">Menu</button>
+              <button onClick={() => navigate('menu')} className="hover:text-primary transition-colors">Menu</button>
               <button className="hover:text-primary transition-colors">Our Story</button>
-              <button onClick={() => setCurrentView('catering')} className="hover:text-primary transition-colors">Catering</button>
+              <button onClick={() => navigate('catering')} className="hover:text-primary transition-colors">Catering</button>
             </div>
             <a
               href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
@@ -90,10 +89,52 @@ export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
           </div>
         )}
 
-        <button className="md:hidden text-white">
-          <MenuIcon className="w-6 h-6" />
+        <button
+          className="md:hidden text-white p-2 relative z-50"
+          onClick={() => setMobileOpen(prev => !prev)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
         </button>
       </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-[#0a0a0a] border-t border-border-hard px-4 pb-6 flex flex-col gap-4"
+          >
+            <button
+              onClick={() => navigate('menu')}
+              className="text-left font-sub uppercase tracking-wider text-sm text-text-smoke hover:text-primary transition-colors pt-4"
+            >
+              Menu
+            </button>
+            <button
+              className="text-left font-sub uppercase tracking-wider text-sm text-text-smoke hover:text-primary transition-colors"
+            >
+              Our Story
+            </button>
+            <button
+              onClick={() => navigate('catering')}
+              className="text-left font-sub uppercase tracking-wider text-sm text-text-smoke hover:text-primary transition-colors"
+            >
+              Catering
+            </button>
+            <a
+              href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex items-center justify-center bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wide transition-all"
+            >
+              Order Now
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
