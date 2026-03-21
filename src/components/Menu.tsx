@@ -84,7 +84,7 @@ const categories: MenuCategory[] = [
         name: 'Mixed Grill',
         desc: 'A generous platter of kafta, chicken tawook, and lamb skewers served with grilled vegetables and fresh pita.',
         tags: ['Halal'],
-        img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop'
+        img: '/mixed-grill-board.png'
       },
       {
         id: 'lamb-chops',
@@ -139,7 +139,7 @@ const categories: MenuCategory[] = [
         tags: ['VG'],
         badge: 'Vegan',
         badgeColor: 'bg-brand-green',
-        img: 'https://images.unsplash.com/photo-1593504049359-74330189a345?q=80&w=800&auto=format&fit=crop'
+        img: '/og-falafel.png'
       },
       {
         id: 'beirut-loaded-fries',
@@ -277,7 +277,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
               {catIndex === 1 && (
                 <section className="relative w-full rounded-xl overflow-hidden group cursor-pointer border-2 border-transparent hover:border-primary transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:scale-105 transition-transform duration-700" />
+                  <img src="/mixed-grill-board.png" alt="Catering" className="absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:scale-105 transition-transform duration-700" />
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>

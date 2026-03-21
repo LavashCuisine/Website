@@ -17,7 +17,7 @@ export default function Home({ setCurrentView }: HomeProps) {
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <div 
             className="w-full h-full bg-cover bg-center" 
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop')" }}
+            style={{ backgroundImage: "url('/mixed-grill-board.png')" }}
           ></div>
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6">
@@ -89,7 +89,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
             <div className="group">
               <div className="relative aspect-square overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?q=80&w=800&auto=format&fit=crop" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">The O.G. Falafel</h3>
@@ -100,7 +100,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
             <div className="group">
               <div className="relative aspect-square overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Mixed Grill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/mixed-grill-board.png" alt="Mixed Grill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">Mixed Grill Plate</h3>
@@ -111,7 +111,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
             <div className="md:col-span-2 relative mt-4 overflow-hidden group border border-border-hard bg-surface-dark">
               <div className="absolute inset-0 bg-primary/90 z-10 transition-opacity group-hover:opacity-95"></div>
-              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000&auto=format&fit=crop" alt="Grill" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" />
+              <img src="/mixed-grill-board.png" alt="Grill" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" />
               <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-center md:text-left">
                   <h3 className="font-display text-4xl md:text-5xl uppercase text-white mb-2">Feeding the Crew?</h3>
