@@ -67,7 +67,7 @@ const categories: MenuCategory[] = [
   },
   {
     id: 'platters',
-    label: 'Platters',
+    label: 'Bowls',
     subtitle: 'Authentic Plates',
     items: [
       {
