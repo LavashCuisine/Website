@@ -17,7 +17,7 @@ export default function Home({ setCurrentView }: HomeProps) {
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <div 
             className="w-full h-full bg-cover bg-center" 
-            style={{ backgroundImage: "url('/mixed-grill-board.png')" }}
+            style={{ backgroundImage: "url('/hero-image.jpg')" }}
           ></div>
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6">

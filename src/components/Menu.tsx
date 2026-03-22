@@ -176,7 +176,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
       <aside className="hidden lg:flex flex-col w-64 h-full border-r border-border-hard bg-background-dark overflow-y-auto py-8 pl-10 pr-4 shrink-0">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1">
-            <h1 className="text-white font-display text-4xl uppercase leading-none tracking-tight mb-2">The<br/>Menu</h1>
+            <h1 className="text-white font-display text-4xl uppercase leading-none tracking-tight mb-2">The<br />Menu</h1>
             <p className="text-text-smoke text-xs uppercase tracking-widest text-brand-yellow">Authentic Lebanese</p>
           </div>
 
@@ -185,18 +185,16 @@ export default function Menu({ setCurrentView }: MenuProps) {
               <a
                 key={cat.id}
                 href={`#${cat.id}`}
-                className={`group flex items-center justify-between py-3 pl-4 pr-2 rounded-r-lg transition-all ${
-                  i === 0
+                className={`group flex items-center justify-between py-3 pl-4 pr-2 rounded-r-lg transition-all ${i === 0
                     ? 'border-l-4 border-brand-green bg-gradient-to-r from-brand-green/10 to-transparent'
                     : 'border-l-4 border-transparent hover:border-border-hard hover:bg-white/5'
-                }`}
+                  }`}
               >
                 <span className={`font-display text-xl uppercase tracking-wide ${i === 0 ? 'text-white' : 'text-text-smoke hover:text-white'}`}>{cat.label}</span>
-                <ArrowRight className={`w-4 h-4 transition-all ${
-                  i === 0
+                <ArrowRight className={`w-4 h-4 transition-all ${i === 0
                     ? 'text-brand-green opacity-100 translate-x-0'
                     : 'text-text-smoke opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
-                }`} />
+                  }`} />
               </a>
             ))}
           </nav>
@@ -281,7 +279,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>
-                      <h2 className="text-white font-display text-4xl md:text-5xl uppercase leading-[0.9] mb-2">Feeding the crew?<br/><span className="text-primary">Get the Lavash Tray.</span></h2>
+                      <h2 className="text-white font-display text-4xl md:text-5xl uppercase leading-[0.9] mb-2">Feeding the crew?<br /><span className="text-primary">Get the Lavash Tray.</span></h2>
                       <p className="text-text-smoke text-lg">Serves 10-12 hungry humans. Includes all meats, all sides, and extra garlic sauce.</p>
                     </div>
                     <div className="flex flex-col items-end">
