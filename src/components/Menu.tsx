@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Clock } from 'lucide-react';
 import useStoreHours from '../hooks/useStoreHours';
 
@@ -163,6 +163,32 @@ const categories: MenuCategory[] = [
 
 export default function Menu({ setCurrentView }: MenuProps) {
   const { isOpen, label } = useStoreHours();
+  const [activeCategory, setActiveCategory] = useState<string>(categories[0].id);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: document.getElementById('menu-scroll-container'),
+      rootMargin: '-10% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveCategory(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    categories.forEach((cat) => {
+      const element = document.getElementById(cat.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="flex h-[calc(100vh-96px)] overflow-hidden">
@@ -174,22 +200,25 @@ export default function Menu({ setCurrentView }: MenuProps) {
           </div>
 
           <nav className="flex flex-col gap-2">
-            {categories.map((cat, i) => (
-              <a
-                key={cat.id}
-                href={`#${cat.id}`}
-                className={`group flex items-center justify-between py-3 pl-4 pr-2 rounded-r-lg transition-all ${i === 0
-                    ? 'border-l-4 border-brand-green bg-gradient-to-r from-brand-green/10 to-transparent'
-                    : 'border-l-4 border-transparent hover:border-border-hard hover:bg-white/5'
-                  }`}
-              >
-                <span className={`font-display text-xl uppercase tracking-wide ${i === 0 ? 'text-white' : 'text-text-smoke hover:text-white'}`}>{cat.label}</span>
-                <ArrowRight className={`w-4 h-4 transition-all ${i === 0
-                    ? 'text-brand-green opacity-100 translate-x-0'
-                    : 'text-text-smoke opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
-                  }`} />
-              </a>
-            ))}
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat.id;
+              return (
+                <a
+                  key={cat.id}
+                  href={`#${cat.id}`}
+                  className={`group flex items-center justify-between py-3 pl-4 pr-2 rounded-r-lg transition-all ${isActive
+                      ? 'border-l-4 border-brand-green bg-gradient-to-r from-brand-green/10 to-transparent'
+                      : 'border-l-4 border-transparent hover:border-border-hard hover:bg-white/5'
+                    }`}
+                >
+                  <span className={`font-display text-xl uppercase tracking-wide ${isActive ? 'text-white' : 'text-text-smoke hover:text-white'}`}>{cat.label}</span>
+                  <ArrowRight className={`w-4 h-4 transition-all ${isActive
+                      ? 'text-brand-green opacity-100 translate-x-0'
+                      : 'text-text-smoke opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
+                    }`} />
+                </a>
+              );
+            })}
           </nav>
         </div>
 
@@ -201,7 +230,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
         </div>
       </aside>
 
-      <main className="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto h-full relative">
+      <main id="menu-scroll-container" className="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto h-full relative">
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.02] z-0 select-none">
           <h1 className="text-[20vw] font-display text-white uppercase leading-none whitespace-nowrap">LAVASH</h1>
         </div>
