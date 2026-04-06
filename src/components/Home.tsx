@@ -21,8 +21,11 @@ export default function Home({ setCurrentView }: HomeProps) {
           ></div>
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6">
-          <div className={`inline-flex items-center gap-2 px-3 py-1 border text-xs font-bold uppercase tracking-widest mb-4 ${isOpen ? 'bg-brand-green/20 border-brand-green/50 text-brand-green' : 'bg-primary/20 border-primary/50 text-primary'}`}>
-            <span className={`w-2 h-2 rounded-full animate-pulse ${isOpen ? 'bg-brand-green' : 'bg-primary'}`}></span>
+          <div className={`inline-flex items-center gap-3 px-5 py-2.5 border text-sm font-bold uppercase tracking-widest mb-4 ${isOpen ? 'bg-brand-green/40 border-brand-green text-brand-green shadow-[0_0_24px_-4px_rgba(0,140,68,0.7)]' : 'bg-primary/40 border-primary text-primary shadow-[0_0_24px_-4px_rgba(217,37,37,0.5)]'}`}>
+            <span className="relative flex items-center justify-center w-3 h-3">
+              <span className={`absolute inline-flex w-full h-full rounded-full opacity-60 animate-ping ${isOpen ? 'bg-brand-green' : 'bg-primary'}`}></span>
+              <span className={`relative w-3 h-3 rounded-full ${isOpen ? 'bg-brand-green' : 'bg-primary'}`}></span>
+            </span>
             {isOpen ? `Kitchen Live • ${label}` : label}
           </div>
           <h1 className="font-display text-6xl md:text-8xl lg:text-[140px] leading-[0.85] uppercase text-white mix-blend-overlay opacity-90">
@@ -77,9 +80,9 @@ export default function Home({ setCurrentView }: HomeProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="md:col-span-2 group">
-              <div className="relative aspect-[21/9] overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1000&auto=format&fit=crop" alt="Beirut Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
+              <div className="relative aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
+                <img src="/beirut-loaded-fries.png" alt="Beirut Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 p-6 md:p-8">
                   <h3 className="font-display text-4xl uppercase text-white mb-2 group-hover:text-primary transition-colors">Beirut Fries Loaded</h3>
                   <p className="font-body text-text-smoke max-w-lg line-clamp-2">Crispy fries drenched in garlic sauce, topped with 24-hour marinated chicken shawarma, pickles, and our signature spicy heat sauce.</p>
@@ -100,7 +103,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
             <div className="group">
               <div className="relative aspect-square overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="/mixed-grill-board.png" alt="Mixed Grill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Mixed Grill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">Mixed Grill Plate</h3>
@@ -110,14 +113,14 @@ export default function Home({ setCurrentView }: HomeProps) {
             </div>
 
             <div className="md:col-span-2 relative mt-4 overflow-hidden group border border-border-hard bg-surface-dark">
-              <div className="absolute inset-0 bg-primary/90 z-10 transition-opacity group-hover:opacity-95"></div>
-              <img src="/mixed-grill-board.png" alt="Grill" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" />
-              <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="text-center md:text-left">
-                  <h3 className="font-display text-4xl md:text-5xl uppercase text-white mb-2">Feeding the Crew?</h3>
-                  <p className="font-sub text-white/80 text-lg uppercase tracking-wider">Get the Lavash Tray • Feeds 10-12 People</p>
+              <img src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-[center_70%] md:object-center object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/95 via-black/70 to-transparent md:to-black/20 z-10"></div>
+              <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 h-full min-h-[300px]">
+                <div className="text-center md:text-left mt-auto md:mt-0 max-w-xl">
+                  <h3 className="font-display text-4xl md:text-5xl uppercase text-white mb-2 group-hover:text-primary transition-colors">Feeding the Crew?</h3>
+                  <p className="font-sub text-white/90 text-lg uppercase tracking-wider">Get the Lavash Tray • 5 Sandwiches • Feeds 4-5 People</p>
                 </div>
-                <a href="tel:+17344951115" className="bg-white text-primary hover:bg-black hover:text-white font-display text-xl px-8 py-4 uppercase tracking-wider transition-colors min-w-fit text-center">
+                <a href="tel:+17344951115" className="bg-primary text-white hover:bg-white hover:text-primary font-display text-xl px-8 py-4 uppercase tracking-wider transition-colors min-w-fit text-center border-2 border-primary mt-auto md:mt-0">
                   Call to Order
                 </a>
               </div>
@@ -162,7 +165,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
               <article className="relative bg-surface-dark border border-border-hard group hover:border-primary transition-colors duration-300 opacity-80 hover:opacity-100">
                 <div className="aspect-[4/3] w-full overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=800&auto=format&fit=crop" alt="Hommous" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" />
+                  <img src="/hommous.png" alt="Hommous" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <div className="flex justify-between items-start mb-2">
@@ -191,8 +194,8 @@ export default function Home({ setCurrentView }: HomeProps) {
           <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-border-hard text-text-smoke text-sm uppercase tracking-wider">
             <p>© 2024 Lavash Lebanese Cuisine. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-primary transition-colors">Instagram</a>
-              <a href="#" className="hover:text-primary transition-colors">TikTok</a>
+              <a href="https://www.instagram.com/lavashcantonrestaurant/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+              <a href="https://www.tiktok.com/@lavashlebanesecuisine" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a>
               <a href="#" className="hover:text-primary transition-colors">Locations</a>
             </div>
           </div>

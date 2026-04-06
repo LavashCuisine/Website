@@ -38,7 +38,7 @@ const categories: MenuCategory[] = [
         tags: ['Signature'],
         badge: 'Fan Favorite',
         badgeColor: 'bg-primary',
-        img: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=800&auto=format&fit=crop'
+        img: '/saj_bread_chicken_shawarma.png'
       },
       {
         id: 'spicy-chicken-manoushi',
@@ -55,13 +55,6 @@ const categories: MenuCategory[] = [
         desc: 'Grilled chicken, crisp romaine, shaved parmesan, and creamy Caesar dressing rolled in a soft tortilla.',
         tags: [],
         img: 'https://images.unsplash.com/photo-1626804475297-41609ea0aa4eb?q=80&w=800&auto=format&fit=crop'
-      },
-      {
-        id: 'tawook',
-        name: 'Tawook',
-        desc: 'Tender marinated chicken breast cubes, coleslaw, pickles, fries tucked inside, and our signature garlic whip.',
-        tags: ['Halal'],
-        img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop'
       }
     ]
   },
@@ -77,23 +70,32 @@ const categories: MenuCategory[] = [
         tags: ['GF', 'High Protein'],
         badge: 'Most Popular',
         badgeColor: 'bg-primary',
-        img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop'
+        img: '/chicken-shawarma-bowl.png'
       },
       {
         id: 'mixed-grill',
         name: 'Mixed Grill',
         desc: 'A generous platter of kafta, chicken tawook, and lamb skewers served with grilled vegetables and fresh pita.',
         tags: ['Halal'],
-        img: '/mixed-grill-board.png'
+        img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop'
       },
       {
-        id: 'lamb-chops',
-        name: 'Lamb Chops',
-        desc: 'Three tender marinated chops grilled to perfection, served with roasted potatoes and mint yogurt.',
-        tags: [],
+        id: 'shish-tawook-bowl',
+        name: 'Shish Tawook Bowl',
+        desc: 'Grilled marinated chicken skewered over bright turmeric rice with fresh salad and pickled vegetables.',
+        tags: ['Halal', 'High Protein'],
         badge: 'Premium',
         badgeColor: 'bg-brand-green',
-        img: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop'
+        img: '/shish_tawook_bowl.png'
+      },
+      {
+        id: 'falafel-bowl',
+        name: 'Falafel Bowl',
+        desc: 'Crispy chickpea fritters with fresh herbs, served with tahini sauce and pickled vegetables.',
+        tags: ['VG'],
+        badge: 'Vegan',
+        badgeColor: 'bg-brand-green',
+        img: '/og-falafel.png'
       }
     ]
   },
@@ -107,7 +109,7 @@ const categories: MenuCategory[] = [
         name: 'Hommous',
         desc: 'Silky smooth chickpea dip drizzled with extra virgin olive oil, served with warm pita bread.',
         tags: ['VG', 'GF'],
-        img: 'https://images.unsplash.com/photo-1637949385162-e416da77e06b?q=80&w=800&auto=format&fit=crop'
+        img: '/hommous.png'
       },
       {
         id: 'fattoush',
@@ -133,20 +135,11 @@ const categories: MenuCategory[] = [
         img: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?q=80&w=800&auto=format&fit=crop'
       },
       {
-        id: 'falafel',
-        name: 'Falafel',
-        desc: 'Crispy chickpea fritters with fresh herbs, served with tahini sauce and pickled vegetables.',
-        tags: ['VG'],
-        badge: 'Vegan',
-        badgeColor: 'bg-brand-green',
-        img: '/og-falafel.png'
-      },
-      {
         id: 'beirut-loaded-fries',
         name: 'Beirut Loaded Fries',
         desc: 'Thick-cut fries smothered in garlic whip, spiced ground beef, pickles, and a drizzle of tahini.',
         tags: [],
-        img: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=800&auto=format&fit=crop'
+        img: '/beirut-loaded-fries.png'
       }
     ]
   },
@@ -157,12 +150,12 @@ const categories: MenuCategory[] = [
     items: [
       {
         id: 'baklava',
-        name: 'Baklava',
-        desc: 'Flaky layers of phyllo pastry filled with crushed pistachios and walnuts, soaked in rose-scented honey syrup.',
+        name: 'Baklava Fingers',
+        desc: 'Flaky layers of phyllo pastry rolled and filled with a nut mixture, soaked in rose-scented honey syrup and topped with crushed pistachios.',
         tags: [],
         badge: 'House Made',
         badgeColor: 'bg-brand-yellow text-black',
-        img: 'https://images.unsplash.com/photo-1519676867240-f03562e64571?q=80&w=800&auto=format&fit=crop'
+        img: '/baklava.png'
       }
     ]
   }
@@ -275,7 +268,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
               {catIndex === 1 && (
                 <section className="relative w-full rounded-xl overflow-hidden group cursor-pointer border-2 border-transparent hover:border-primary transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-                  <img src="/mixed-grill-board.png" alt="Catering" className="absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:scale-105 transition-transform duration-700" />
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>
