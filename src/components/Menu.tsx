@@ -272,7 +272,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                         <img
                           src={item.img}
                           alt={item.name}
-                          className="object-cover w-full h-full transform transition-transform duration-500 ease-out group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
+                          className="object-cover w-full h-full transform transition-transform duration-500 ease-out group-hover:scale-105"
                         />
                       </div>
                       <div className="p-5 flex flex-col flex-1 gap-3">
@@ -297,7 +297,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
               {catIndex === 1 && (
                 <section className="relative w-full rounded-xl overflow-hidden group cursor-pointer border-2 border-transparent hover:border-primary transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover grayscale-[30%] group-hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>
