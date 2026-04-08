@@ -54,7 +54,7 @@ const categories: MenuCategory[] = [
         name: 'Caesar Chicken Wrap',
         desc: 'Grilled chicken, crisp romaine, shaved parmesan, and creamy Caesar dressing rolled in a soft tortilla.',
         tags: [],
-        img: 'https://images.unsplash.com/photo-1626804475297-41609ea0aa4eb?q=80&w=800&auto=format&fit=crop'
+        img: '/caesar-chicken-wrap.png'
       }
     ]
   },
@@ -207,14 +207,14 @@ export default function Menu({ setCurrentView }: MenuProps) {
                   key={cat.id}
                   href={`#${cat.id}`}
                   className={`group flex items-center justify-between py-3 pl-4 pr-2 rounded-r-lg transition-all ${isActive
-                      ? 'border-l-4 border-brand-green bg-gradient-to-r from-brand-green/10 to-transparent'
-                      : 'border-l-4 border-transparent hover:border-border-hard hover:bg-white/5'
+                    ? 'border-l-4 border-brand-green bg-gradient-to-r from-brand-green/10 to-transparent'
+                    : 'border-l-4 border-transparent hover:border-border-hard hover:bg-white/5'
                     }`}
                 >
                   <span className={`font-display text-xl uppercase tracking-wide ${isActive ? 'text-white' : 'text-text-smoke hover:text-white'}`}>{cat.label}</span>
                   <ArrowRight className={`w-4 h-4 transition-all ${isActive
-                      ? 'text-brand-green opacity-100 translate-x-0'
-                      : 'text-text-smoke opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
+                    ? 'text-brand-green opacity-100 translate-x-0'
+                    : 'text-text-smoke opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'
                     }`} />
                 </a>
               );
@@ -272,7 +272,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                         <img
                           src={item.img}
                           alt={item.name}
-                          className="object-cover w-full h-full transform transition-transform duration-500 ease-out group-hover:scale-105"
+                          className="object-cover w-full h-full"
                         />
                       </div>
                       <div className="p-5 flex flex-col flex-1 gap-3">
@@ -297,7 +297,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
               {catIndex === 1 && (
                 <section className="relative w-full rounded-xl overflow-hidden group cursor-pointer border-2 border-transparent hover:border-primary transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>
