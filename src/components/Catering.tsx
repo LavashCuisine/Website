@@ -49,7 +49,7 @@ export default function Catering({ setCurrentView }: CateringProps) {
   return (
     <div className="w-full">
       {/* Hero */}
-      <header className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden border-b border-border-hard">
+      <header className="relative w-full min-h-[480px] md:min-h-[70vh] flex items-center justify-center overflow-hidden border-b border-border-hard">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-background-dark/30 z-10"></div>
           <div className="absolute inset-0 bg-black/50 z-10"></div>
@@ -58,12 +58,12 @@ export default function Catering({ setCurrentView }: CateringProps) {
             style={{ backgroundImage: "url('/new_lavash_tray.png')" }}
           ></div>
         </div>
-        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6 py-20">
+        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-5 md:gap-6 py-12 md:py-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/20 border border-brand-green/50 text-brand-green text-xs font-bold uppercase tracking-widest">
             <UtensilsCrossed className="w-3 h-3" />
             Catering & Large Orders
           </div>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-[120px] leading-[0.85] uppercase text-white">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-[120px] leading-[0.85] uppercase text-white">
             Feed the<br />Crew
           </h1>
           <p className="font-sub text-lg md:text-2xl text-text-smoke uppercase tracking-widest max-w-2xl mt-2">
@@ -72,14 +72,14 @@ export default function Catering({ setCurrentView }: CateringProps) {
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
             <a
               href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
-              className="flex items-center gap-3 bg-primary hover:bg-red-700 text-white font-display text-xl md:text-2xl px-10 py-5 uppercase tracking-wider transition-all transform hover:scale-105 shadow-[0_0_40px_-10px_rgba(217,37,37,0.6)]"
+              className="flex items-center gap-3 bg-primary hover:bg-red-700 text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all transform hover:scale-105 shadow-[0_0_40px_-10px_rgba(217,37,37,0.6)]"
             >
               Order Catering
               <ExternalLink className="w-6 h-6" />
             </a>
             <a
               href={PHONE_NUMBER}
-              className="flex items-center gap-3 border-2 border-white/30 hover:border-white text-white font-display text-xl md:text-2xl px-10 py-5 uppercase tracking-wider transition-all hover:bg-white/5"
+              className="flex items-center gap-3 border-2 border-white/30 hover:border-white text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all hover:bg-white/5"
             >
               Call Us
               <Phone className="w-6 h-6" />
@@ -90,9 +90,9 @@ export default function Catering({ setCurrentView }: CateringProps) {
 
       {/* What We Offer */}
       <section className="border-b border-border-hard">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-28">
           <div className="text-center mb-16">
-            <h2 className="font-display text-5xl md:text-7xl uppercase text-white leading-none">What We Offer</h2>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">What We Offer</h2>
             <p className="font-sub text-lg text-text-smoke uppercase tracking-widest mt-4">Something for every event, every appetite</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -114,9 +114,9 @@ export default function Catering({ setCurrentView }: CateringProps) {
 
       {/* How It Works */}
       <section className="border-b border-border-hard bg-surface-dark">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-28">
           <div className="text-center mb-16">
-            <h2 className="font-display text-5xl md:text-7xl uppercase text-white leading-none">How It Works</h2>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">How It Works</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {steps.map((step) => (
@@ -132,9 +132,9 @@ export default function Catering({ setCurrentView }: CateringProps) {
 
       {/* Perfect For */}
       <section className="border-b border-border-hard">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-28">
           <div className="text-center mb-12">
-            <h2 className="font-display text-5xl md:text-7xl uppercase text-white leading-none">Perfect For</h2>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">Perfect For</h2>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {useCases.map((uc) => (
@@ -157,8 +157,8 @@ export default function Catering({ setCurrentView }: CateringProps) {
           className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-30"
           style={{ backgroundImage: "url('/new_lavash_tray.png')" }}
         ></div>
-        <div className="relative z-20 max-w-[1200px] mx-auto px-4 md:px-8 py-20 md:py-28 text-center flex flex-col items-center gap-6">
-          <h2 className="font-display text-5xl md:text-7xl uppercase text-white leading-none">
+        <div className="relative z-20 max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-28 text-center flex flex-col items-center gap-6">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">
             Ready to Feed<br />the Crowd?
           </h2>
           <p className="font-sub text-lg text-white/80 uppercase tracking-widest max-w-xl">
@@ -167,14 +167,14 @@ export default function Catering({ setCurrentView }: CateringProps) {
           <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
             <a
               href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
-              className="flex items-center gap-3 bg-white text-primary hover:bg-black hover:text-white font-display text-xl md:text-2xl px-10 py-5 uppercase tracking-wider transition-all transform hover:scale-105"
+              className="flex items-center gap-3 bg-white text-primary hover:bg-black hover:text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all transform hover:scale-105"
             >
               Order Catering
               <ExternalLink className="w-6 h-6" />
             </a>
             <a
               href={PHONE_NUMBER}
-              className="flex items-center gap-3 border-2 border-white/50 hover:border-white text-white font-display text-xl md:text-2xl px-10 py-5 uppercase tracking-wider transition-all hover:bg-white/10"
+              className="flex items-center gap-3 border-2 border-white/50 hover:border-white text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all hover:bg-white/10"
             >
               Call Us
               <Phone className="w-6 h-6" />

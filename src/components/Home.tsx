@@ -16,9 +16,9 @@ export default function Home({ setCurrentView }: HomeProps) {
     <div className="w-full">
       <div className="bg-brand-green text-white border-b border-white/20 px-4 py-5 md:py-7 flex items-center justify-center gap-3 md:gap-5 text-center">
         <ShieldCheck aria-hidden="true" className="w-9 h-9 md:w-12 md:h-12 shrink-0" />
-        <p className="font-display text-3xl md:text-5xl uppercase tracking-wide">100% Certified Halal</p>
+        <p className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-wide">100% Certified Halal</p>
       </div>
-      <header className="relative w-full min-h-[640px] py-16 flex items-center justify-center overflow-hidden border-b border-border-hard">
+      <header className="relative w-full min-h-[520px] md:min-h-[640px] py-10 md:py-16 flex items-center justify-center overflow-hidden border-b border-border-hard">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -27,23 +27,23 @@ export default function Home({ setCurrentView }: HomeProps) {
             style={{ backgroundImage: "url('/hero-image.jpg')" }}
           ></div>
         </div>
-        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6">
+        <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-5 md:gap-6">
           <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/60 bg-[#101012] px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wide text-white shadow-lg mb-4">
             <span aria-hidden="true" className={`w-3 h-3 rounded-full shrink-0 ${isOpen ? 'bg-green-400' : 'bg-zinc-300'}`} />
             <span>{isOpen ? `Kitchen Live • ${label}` : label}</span>
           </div>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-[140px] leading-[0.85] uppercase text-white mix-blend-overlay opacity-90">
+          <h1 className="font-display text-[clamp(3rem,14vw,6rem)] md:text-8xl lg:text-[140px] leading-[0.85] uppercase text-white mix-blend-overlay opacity-90">
             Canton's<br/>Loudest<br/>Flavors
           </h1>
-          <p className="font-sub text-lg md:text-2xl text-text-smoke uppercase tracking-widest max-w-2xl mt-4">
+          <p className="font-sub text-base md:text-2xl text-text-smoke uppercase tracking-wide md:tracking-widest max-w-2xl mt-2 md:mt-4">
             Authentic Lebanese Street Food • Chaotic Good
           </p>
-          <div className="mt-8 group">
+          <div className="mt-4 md:mt-8 group">
             <a
               href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden bg-primary text-white font-display text-2xl md:text-4xl px-12 py-6 uppercase tracking-wider hover:bg-white hover:text-primary transition-all duration-300 transform group-hover:scale-105 shadow-[0_0_40px_-10px_rgba(217,37,37,0.6)] inline-block"
+              className="relative overflow-hidden bg-primary text-white font-display text-2xl md:text-4xl px-8 py-4 md:px-12 md:py-6 uppercase tracking-wider hover:bg-white hover:text-primary transition-all duration-300 transform group-hover:scale-105 shadow-[0_0_40px_-10px_rgba(217,37,37,0.6)] inline-block"
             >
               <span className="relative z-10 flex items-center gap-4">
                 Order Now
@@ -74,9 +74,9 @@ export default function Home({ setCurrentView }: HomeProps) {
       </div>
 
       <main className="max-w-[1600px] mx-auto w-full border-x border-border-hard min-h-screen grid grid-cols-1 lg:grid-cols-12">
-        <section className="lg:col-span-8 border-r border-border-hard p-6 md:p-10">
+        <section className="lg:col-span-8 min-w-0 lg:border-r border-border-hard p-6 md:p-10">
           <div className="flex items-end justify-between mb-10 border-b border-border-hard pb-4">
-            <h2 className="font-display text-5xl md:text-7xl uppercase text-white leading-none">The Heavy<br/>Hitters</h2>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">The Heavy<br/>Hitters</h2>
             <button onClick={() => setCurrentView('menu')} className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-white transition-colors uppercase text-sm tracking-wider">
               View Full Menu <ArrowRight className="w-4 h-4 -rotate-45" />
             </button>
@@ -84,7 +84,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="md:col-span-2 group">
-              <div className="relative aspect-[16/9] min-h-[280px] md:min-h-0 overflow-hidden bg-surface-dark border border-border-hard">
+              <div className="relative w-full min-w-0 h-[320px] sm:h-[360px] md:h-auto md:aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
                 <img src="/beirut-loaded-fries.png" alt="Chicken Shawarma Bowl W/ Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 p-6 md:p-8">
@@ -95,7 +95,7 @@ export default function Home({ setCurrentView }: HomeProps) {
             </div>
 
             <div className="md:col-span-2 group">
-              <div className="relative aspect-[16/9] min-h-[240px] md:min-h-0 overflow-hidden bg-surface-dark border border-border-hard">
+              <div className="relative w-full min-w-0 h-[260px] sm:h-[320px] md:h-auto md:aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
                 <img src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
@@ -121,7 +121,7 @@ export default function Home({ setCurrentView }: HomeProps) {
           </div>
         </section>
 
-        <aside className="lg:col-span-4 p-6 md:p-10 bg-background-dark relative">
+        <aside className="lg:col-span-4 min-w-0 p-6 md:p-10 bg-background-dark relative">
           <div className="sticky top-24">
             <div className="flex items-center gap-2 mb-8 text-primary">
               <span className="w-3 h-3 bg-primary rounded-full animate-pulse"></span>

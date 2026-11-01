@@ -181,7 +181,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
   }, []);
 
   return (
-    <div className="flex h-[calc(100vh-96px)] overflow-hidden">
+    <div className="flex h-[calc(100dvh-80px)] md:h-[calc(100dvh-96px)] overflow-hidden">
       <aside className="hidden lg:flex flex-col w-64 h-full border-r border-border-hard bg-background-dark overflow-y-auto py-8 pl-10 pr-4 shrink-0">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1">
@@ -220,14 +220,14 @@ export default function Menu({ setCurrentView }: MenuProps) {
         </div>
       </aside>
 
-      <main id="menu-scroll-container" className="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto h-full relative">
+      <main id="menu-scroll-container" className="flex-1 min-w-0 p-4 md:p-8 lg:p-12 overflow-y-auto h-full relative">
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.02] z-0 select-none">
           <h1 className="text-[20vw] font-display text-white uppercase leading-none whitespace-nowrap">LAVASH</h1>
         </div>
 
-        <div className="max-w-6xl mx-auto flex flex-col gap-16 relative z-10 pb-20">
+        <div className="max-w-6xl mx-auto flex flex-col gap-10 md:gap-16 relative z-10 pb-20">
 
-          <div className="flex items-center justify-between bg-surface-dark border border-border-hard rounded-lg p-5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between bg-surface-dark border border-border-hard rounded-lg p-5">
             <p className="text-white font-sub text-lg uppercase tracking-wide">View full menu & order online</p>
             <a
               href={SKYTAB_URL}
@@ -239,11 +239,15 @@ export default function Menu({ setCurrentView }: MenuProps) {
             </a>
           </div>
 
+          <nav aria-label="Menu categories" className="lg:hidden flex gap-2 overflow-x-auto pb-2 -mt-4">
+            {categories.map(cat => <a key={cat.id} href={`#${cat.id}`} className={`shrink-0 min-h-11 flex items-center px-4 rounded-full border text-sm font-bold ${activeCategory === cat.id ? 'border-brand-green text-white bg-brand-green/20' : 'border-border-hard text-text-smoke'}`}>{cat.label}</a>)}
+          </nav>
+
           {categories.map((cat, catIndex) => (
             <React.Fragment key={cat.id}>
-              <section id={cat.id} className="scroll-mt-24">
-                <div className="flex items-baseline justify-between mb-8 border-b border-border-hard pb-4">
-                  <h2 className="text-white font-display text-5xl uppercase tracking-tight">{cat.label}</h2>
+              <section id={cat.id} className="scroll-mt-4">
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 justify-between mb-6 md:mb-8 border-b border-border-hard pb-4">
+                  <h2 className="text-white font-display text-4xl sm:text-5xl uppercase tracking-tight">{cat.label}</h2>
                   <span className="text-brand-green font-mono text-sm uppercase tracking-wider">{cat.subtitle}</span>
                 </div>
 
@@ -267,7 +271,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                           />
                         </div>
                       )}
-                      <div className="p-5 flex flex-col flex-1 gap-3">
+                      <div className="p-5 min-w-0 flex flex-col flex-1 gap-3">
                         {!item.img && item.badge && (
                           <span className={`self-start text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${item.badgeColor}`}>
                             {item.badge}
@@ -281,7 +285,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                               <span key={tag} className="text-xs border border-border-hard text-text-smoke px-1.5 py-0.5 rounded">{tag}</span>
                             ))}
                           </div>
-                          <a href={SKYTAB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#27272A] hover:bg-primary text-white transition-colors group/btn">
+                          <a href={SKYTAB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-lg bg-[#27272A] hover:bg-primary text-white transition-colors group/btn">
                             <ArrowRight className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
                           </a>
                         </div>
