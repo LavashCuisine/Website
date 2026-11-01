@@ -7,7 +7,7 @@ interface StoreHoursInfo {
 
 // Schedule: day index (0=Sun, 1=Mon, ..., 6=Sat)
 export const SCHEDULE: Record<number, { open: number; close: number } | null> = {
-  0: { open: 10.5, close: 21 },    // Sunday 10:30 AM – 9:00 PM
+  0: { open: 11, close: 21 },      // Sunday 11:00 AM – 9:00 PM
   1: { open: 10.5, close: 21 },    // Monday 10:30 AM – 9:00 PM
   2: { open: 10.5, close: 21 },    // Tuesday
   3: { open: 10.5, close: 21 },    // Wednesday
