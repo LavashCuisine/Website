@@ -21,7 +21,7 @@ export default function VisitUs() {
                 <div><a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">Get directions <ArrowUpRight aria-hidden="true" className="w-4 h-4" /></a></div>
               </div>
               <div className="space-y-4 border-t border-border-hard pt-8">
-                <h3 className="font-display text-3xl uppercase text-white flex items-center gap-3"><Clock aria-hidden="true" className="text-primary shrink-0" /> Hours of operation</h3>
+                <h3 className="font-display text-3xl uppercase text-white flex items-center gap-3"><Clock aria-hidden="true" className="text-primary shrink-0" /> Hours</h3>
                 <p className="text-white">Open until 9 PM everyday</p>
                 <dl className="space-y-2 max-w-md">{[1, 2, 3, 4, 5, 6, 0].map(day => {
                   const hours = SCHEDULE[day];
