@@ -14,7 +14,7 @@ export default function App() {
         setCurrentView={setCurrentView}
       />
 
-      <div className="flex-1 pt-24">
+      <div className="flex-1 min-w-0 pt-20 md:pt-24">
         {currentView === 'home' ? (
           <Home setCurrentView={setCurrentView} />
         ) : currentView === 'catering' ? (
