@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowRight, Star, ThumbsUp } from 'lucide-react';
 import useStoreHours from '../hooks/useStoreHours';
+import VisitUs from './VisitUs';
+import { INSTAGRAM_URL, GOOGLE_MAPS_URL } from '../business';
 
 interface HomeProps {
   setCurrentView: (view: string) => void;
@@ -138,14 +140,7 @@ export default function Home({ setCurrentView }: HomeProps) {
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-display text-2xl uppercase text-white leading-none">Spicy Chicken<br/>Manoushi</h3>
                   </div>
-                  <div className="flex items-center gap-1 mb-4">
-                    <Star className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
-                    <Star className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
-                    <Star className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
-                    <Star className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
-                    <Star className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
-                    <span className="text-xs text-text-smoke ml-2">(124 reviews)</span>
-                  </div>
+                  <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="inline-block text-sm text-text-smoke hover:text-white underline underline-offset-4 mb-4">Read our Google reviews</a>
                   <a href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave" target="_blank" rel="noopener noreferrer" className="w-full border border-border-hard text-white font-bold py-3 uppercase text-sm hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
                     Order Now <ArrowRight className="w-4 h-4" />
                   </a>
@@ -177,15 +172,17 @@ export default function Home({ setCurrentView }: HomeProps) {
         </aside>
       </main>
 
+      <VisitUs />
+
       <footer className="border-t border-border-hard bg-background-dark pt-16 pb-8">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-[12vw] leading-none text-white/5 uppercase select-none pointer-events-none">Lavash</h2>
           <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-border-hard text-text-smoke text-sm uppercase tracking-wider">
-            <p>© 2024 Lavash Lebanese Cuisine. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Lavash Lebanese Cuisine. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="https://www.instagram.com/lavashcantonrestaurant/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
               <a href="https://www.tiktok.com/@lavashlebanesecuisine" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a>
-              <a href="#" className="hover:text-primary transition-colors">Locations</a>
+              <a href="#visit-us" className="hover:text-primary transition-colors">Location & Hours</a>
             </div>
           </div>
         </div>

@@ -15,6 +15,11 @@ export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
     setMobileOpen(false);
   }
 
+  function visitUs() {
+    navigate('home');
+    requestAnimationFrame(() => document.getElementById('visit-us')?.scrollIntoView({ behavior: 'smooth' }));
+  }
+
   return (
     <nav className="fixed top-0 w-full z-40 border-b border-border-hard bg-[#0a0a0a]">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-24 flex items-center justify-between">
@@ -53,7 +58,7 @@ export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
           <>
             <div className="hidden md:flex items-center gap-8 font-sub uppercase tracking-wider text-sm text-text-smoke">
               <button onClick={() => navigate('menu')} className="hover:text-primary transition-colors">Menu</button>
-              <button className="hover:text-primary transition-colors">Our Story</button>
+              <button onClick={visitUs} className="hover:text-primary transition-colors">Visit Us</button>
               <button onClick={() => navigate('catering')} className="hover:text-primary transition-colors">Catering</button>
             </div>
             <a
@@ -114,9 +119,10 @@ export default function Navbar({ currentView, setCurrentView }: NavbarProps) {
               Menu
             </button>
             <button
+              onClick={visitUs}
               className="text-left font-sub uppercase tracking-wider text-sm text-text-smoke hover:text-primary transition-colors"
             >
-              Our Story
+              Visit Us
             </button>
             <button
               onClick={() => navigate('catering')}
