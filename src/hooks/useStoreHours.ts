@@ -12,8 +12,8 @@ export const SCHEDULE: Record<number, { open: number; close: number } | null> = 
   2: { open: 10.5, close: 21 },    // Tuesday
   3: { open: 10.5, close: 21 },    // Wednesday
   4: { open: 10.5, close: 21 },    // Thursday
-  5: { open: 15, close: 22 },      // Friday 3:00 PM – 10:00 PM
-  6: { open: 10.5, close: 22 },    // Saturday 10:30 AM – 10:00 PM
+  5: { open: 15, close: 21 },      // Friday 3:00 PM – 9:00 PM
+  6: { open: 10.5, close: 21 },    // Saturday 10:30 AM – 9:00 PM
 };
 
 export function formatTime(hours24: number): string {
