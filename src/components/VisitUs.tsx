@@ -1,12 +1,11 @@
 import { MapPin, Clock, Instagram, ArrowUpRight } from 'lucide-react';
-import useStoreHours, { SCHEDULE, formatTime } from '../hooks/useStoreHours';
+import { SCHEDULE, formatTime } from '../hooks/useStoreHours';
 import { ADDRESS, DIRECTIONS_URL, INSTAGRAM_URL } from '../business';
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const linkClass = 'inline-flex items-center gap-2 text-white font-bold underline decoration-primary underline-offset-4 hover:text-primary transition-colors';
 
 export default function VisitUs() {
-  const { isOpen, label } = useStoreHours();
   return (
     <>
       <section id="visit-us" aria-labelledby="visit-heading" className="scroll-mt-28 border-t border-border-hard bg-background-dark px-6 py-14 md:px-10 md:py-20">
@@ -23,7 +22,7 @@ export default function VisitUs() {
               </div>
               <div className="space-y-4 border-t border-border-hard pt-8">
                 <h3 className="font-display text-3xl uppercase text-white flex items-center gap-3"><Clock aria-hidden="true" className="text-primary shrink-0" /> Hours of operation</h3>
-                <p className={isOpen ? 'text-brand-green' : 'text-text-smoke'}>{label} · Canton time</p>
+                <p className="text-white">Open until 9 PM everyday</p>
                 <dl className="space-y-2 max-w-md">{[1, 2, 3, 4, 5, 6, 0].map(day => {
                   const hours = SCHEDULE[day];
                   return <div key={day} className="flex justify-between gap-4"><dt className="text-text-smoke">{days[day]}</dt><dd className="text-white text-right">{hours ? `${formatTime(hours.open)} – ${formatTime(hours.close)}` : 'Closed'}</dd></div>;
