@@ -11,7 +11,7 @@ interface MenuItem {
   name: string;
   desc: string;
   tags: string[];
-  img: string;
+  img?: string;
   badge?: string;
   badgeColor?: string;
 }
@@ -73,11 +73,11 @@ const categories: MenuCategory[] = [
         img: '/chicken-shawarma-bowl.png'
       },
       {
-        id: 'mixed-grill',
-        name: 'Mixed Grill',
-        desc: 'A generous platter of kafta, chicken tawook, and lamb skewers served with grilled vegetables and fresh pita.',
-        tags: ['Halal'],
-        img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop'
+        id: 'chicken-shawarma-bowl-with-fries',
+        name: 'Chicken Shawarma Bowl W/ Fries',
+        desc: 'Chicken shawarma served over crispy fries with garlic sauce, pickles, and spicy sauce.',
+        tags: [],
+        img: '/beirut-loaded-fries.png'
       },
       {
         id: 'shish-tawook-bowl',
@@ -115,15 +115,13 @@ const categories: MenuCategory[] = [
         id: 'fattoush',
         name: 'Fattoush',
         desc: 'Crispy pita chips tossed with fresh greens, tomatoes, radish, and tangy pomegranate vinaigrette.',
-        tags: ['VG'],
-        img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop'
+        tags: ['VG']
       },
       {
         id: 'grape-leaves',
         name: 'Grape Leaves',
         desc: 'Hand-rolled grape leaves stuffed with herbed rice, slow-cooked in lemon and olive oil.',
-        tags: ['VG'],
-        img: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=800&auto=format&fit=crop'
+        tags: ['VG']
       },
       {
         id: 'wings',
@@ -131,15 +129,7 @@ const categories: MenuCategory[] = [
         desc: 'Crispy golden wings tossed in your choice of our signature Lebanese spice blend or garlic butter.',
         tags: [],
         badge: 'Crowd Pleaser',
-        badgeColor: 'bg-primary',
-        img: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?q=80&w=800&auto=format&fit=crop'
-      },
-      {
-        id: 'beirut-loaded-fries',
-        name: 'Beirut Loaded Fries',
-        desc: 'Thick-cut fries smothered in garlic whip, spiced ground beef, pickles, and a drizzle of tahini.',
-        tags: [],
-        img: '/beirut-loaded-fries.png'
+        badgeColor: 'bg-primary'
       }
     ]
   },
@@ -263,19 +253,26 @@ export default function Menu({ setCurrentView }: MenuProps) {
                       key={item.id}
                       className="group relative flex flex-col bg-surface-dark border border-border-hard rounded-lg overflow-hidden hover:border-brand-green/50 transition-all duration-300"
                     >
-                      <div className="relative aspect-[4/3] overflow-hidden">
-                        {item.badge && (
-                          <div className={`absolute top-3 left-3 z-10 text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${item.badgeColor}`}>
-                            {item.badge}
-                          </div>
-                        )}
-                        <img
-                          src={item.img}
-                          alt={item.name}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
+                      {item.img && (
+                        <div className="relative aspect-[4/3] overflow-hidden">
+                          {item.badge && (
+                            <div className={`absolute top-3 left-3 z-10 text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${item.badgeColor}`}>
+                              {item.badge}
+                            </div>
+                          )}
+                          <img
+                            src={item.img}
+                            alt={item.name}
+                            className="object-cover w-full h-full"
+                          />
+                        </div>
+                      )}
                       <div className="p-5 flex flex-col flex-1 gap-3">
+                        {!item.img && item.badge && (
+                          <span className={`self-start text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${item.badgeColor}`}>
+                            {item.badge}
+                          </span>
+                        )}
                         <h3 className="text-white font-display text-2xl uppercase leading-none">{item.name}</h3>
                         <p className="text-text-smoke text-sm leading-relaxed line-clamp-2">{item.desc}</p>
                         <div className="mt-auto pt-2 flex justify-between items-center">
@@ -297,7 +294,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
               {catIndex === 1 && (
                 <section className="relative w-full rounded-xl overflow-hidden group cursor-pointer border-2 border-transparent hover:border-primary transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-                  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop" alt="Catering" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>

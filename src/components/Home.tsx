@@ -80,34 +80,23 @@ export default function Home({ setCurrentView }: HomeProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="md:col-span-2 group">
-              <div className="relative aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="/beirut-loaded-fries.png" alt="Beirut Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="relative aspect-[16/9] min-h-[280px] md:min-h-0 overflow-hidden bg-surface-dark border border-border-hard">
+                <img src="/beirut-loaded-fries.png" alt="Chicken Shawarma Bowl W/ Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 p-6 md:p-8">
-                  <h3 className="font-display text-4xl uppercase text-white mb-2 group-hover:text-primary transition-colors">Beirut Fries Loaded</h3>
-                  <p className="font-body text-text-smoke max-w-lg line-clamp-2">Crispy fries drenched in garlic sauce, topped with 24-hour marinated chicken shawarma, pickles, and our signature spicy heat sauce.</p>
+                  <h3 className="font-display text-3xl md:text-4xl uppercase text-white mb-2 group-hover:text-primary transition-colors">Chicken Shawarma Bowl W/ Fries</h3>
+                  <p className="font-body text-text-smoke max-w-lg line-clamp-2">Chicken shawarma served over crispy fries with garlic sauce, pickles, and spicy sauce.</p>
                 </div>
               </div>
             </div>
 
-            <div className="group">
-              <div className="relative aspect-square overflow-hidden bg-surface-dark border border-border-hard">
+            <div className="md:col-span-2 group">
+              <div className="relative aspect-[16/9] min-h-[240px] md:min-h-0 overflow-hidden bg-surface-dark border border-border-hard">
                 <img src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">The O.G. Falafel</h3>
                   <p className="font-body text-sm text-text-smoke">Chickpea fritters, tahini, turnips.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group">
-              <div className="relative aspect-square overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Mixed Grill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">Mixed Grill Plate</h3>
-                  <p className="font-body text-sm text-text-smoke">Shish tawook, kafta, beef kabob.</p>
                 </div>
               </div>
             </div>

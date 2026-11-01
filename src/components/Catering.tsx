@@ -55,7 +55,7 @@ export default function Catering({ setCurrentView }: CateringProps) {
           <div className="absolute inset-0 bg-black/50 z-10"></div>
           <div
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop')" }}
+            style={{ backgroundImage: "url('/new_lavash_tray.png')" }}
           ></div>
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6 py-20">
@@ -155,7 +155,7 @@ export default function Catering({ setCurrentView }: CateringProps) {
         <div className="absolute inset-0 bg-primary/90 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-30"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('/new_lavash_tray.png')" }}
         ></div>
         <div className="relative z-20 max-w-[1200px] mx-auto px-4 md:px-8 py-20 md:py-28 text-center flex flex-col items-center gap-6">
           <h2 className="font-display text-5xl md:text-7xl uppercase text-white leading-none">
