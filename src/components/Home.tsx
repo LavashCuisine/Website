@@ -28,12 +28,9 @@ export default function Home({ setCurrentView }: HomeProps) {
           ></div>
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-6">
-          <div className={`inline-flex items-center gap-3 px-5 py-2.5 border text-sm font-bold uppercase tracking-widest mb-4 ${isOpen ? 'bg-brand-green/40 border-brand-green text-brand-green shadow-[0_0_24px_-4px_rgba(0,140,68,0.7)]' : 'bg-primary/40 border-primary text-primary shadow-[0_0_24px_-4px_rgba(217,37,37,0.5)]'}`}>
-            <span className="relative flex items-center justify-center w-3 h-3">
-              <span className={`absolute inline-flex w-full h-full rounded-full opacity-60 animate-ping ${isOpen ? 'bg-brand-green' : 'bg-primary'}`}></span>
-              <span className={`relative w-3 h-3 rounded-full ${isOpen ? 'bg-brand-green' : 'bg-primary'}`}></span>
-            </span>
-            {isOpen ? `Kitchen Live • ${label}` : label}
+          <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/60 bg-[#101012] px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wide text-white shadow-lg mb-4">
+            <span aria-hidden="true" className={`w-3 h-3 rounded-full shrink-0 ${isOpen ? 'bg-green-400' : 'bg-zinc-300'}`} />
+            <span>{isOpen ? `Kitchen Live • ${label}` : label}</span>
           </div>
           <h1 className="font-display text-6xl md:text-8xl lg:text-[140px] leading-[0.85] uppercase text-white mix-blend-overlay opacity-90">
             Canton's<br/>Loudest<br/>Flavors
