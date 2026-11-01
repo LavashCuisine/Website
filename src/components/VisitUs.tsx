@@ -1,6 +1,6 @@
-import { MapPin, Clock, Instagram, ShieldCheck, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { MapPin, Clock, Instagram, ArrowUpRight } from 'lucide-react';
 import useStoreHours, { SCHEDULE, formatTime } from '../hooks/useStoreHours';
-import { ADDRESS, GOOGLE_MAPS_URL, DIRECTIONS_URL, INSTAGRAM_URL } from '../business';
+import { ADDRESS, DIRECTIONS_URL, INSTAGRAM_URL } from '../business';
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const linkClass = 'inline-flex items-center gap-2 text-white font-bold underline decoration-primary underline-offset-4 hover:text-primary transition-colors';
@@ -8,39 +8,38 @@ const linkClass = 'inline-flex items-center gap-2 text-white font-bold underline
 export default function VisitUs() {
   const { isOpen, label } = useStoreHours();
   return (
-    <section id="visit-us" aria-labelledby="visit-heading" className="scroll-mt-28 border-t border-border-hard bg-background-dark px-6 py-14 md:px-10 md:py-20">
-      <div className="max-w-[1520px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-          <div><p className="font-sub uppercase tracking-widest text-brand-green mb-3">Your next stop in Canton</p><h2 id="visit-heading" className="font-display text-5xl md:text-7xl uppercase text-white">Come hungry.</h2></div>
-          <div className="inline-flex items-center gap-3 self-start border border-brand-green bg-brand-green/10 px-5 py-4 text-white"><ShieldCheck aria-hidden="true" className="text-brand-green w-8 h-8 shrink-0" /><span className="font-sub text-xl uppercase tracking-wide">100% Certified Halal</span></div>
+    <>
+      <section id="visit-us" aria-labelledby="visit-heading" className="scroll-mt-28 border-t border-border-hard bg-background-dark px-6 py-14 md:px-10 md:py-20">
+        <div className="max-w-[1520px] mx-auto">
+          <p className="font-sub uppercase tracking-widest text-brand-green mb-3">46042 Michigan Avenue · Canton</p>
+          <h2 id="visit-heading" className="font-display text-5xl md:text-7xl uppercase text-white mb-10">Find us. Come hungry.</h2>
+          <div className="grid lg:grid-cols-2 border border-border-hard bg-surface-dark overflow-hidden rounded-lg">
+            <div className="p-6 md:p-10 space-y-8">
+              <div className="space-y-4">
+                <h3 className="font-display text-3xl uppercase text-white flex items-center gap-3"><MapPin aria-hidden="true" className="text-primary shrink-0" /> Our location</h3>
+                <address className="not-italic text-text-smoke text-lg">{ADDRESS}</address>
+                <a href="tel:+17344951115" className={linkClass}>(734) 495-1115</a>
+                <div><a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">Get directions <ArrowUpRight aria-hidden="true" className="w-4 h-4" /></a></div>
+              </div>
+              <div className="space-y-4 border-t border-border-hard pt-8">
+                <h3 className="font-display text-3xl uppercase text-white flex items-center gap-3"><Clock aria-hidden="true" className="text-primary shrink-0" /> Hours of operation</h3>
+                <p className={isOpen ? 'text-brand-green' : 'text-text-smoke'}>{label} · Canton time</p>
+                <dl className="space-y-2 max-w-md">{[1, 2, 3, 4, 5, 6, 0].map(day => {
+                  const hours = SCHEDULE[day];
+                  return <div key={day} className="flex justify-between gap-4"><dt className="text-text-smoke">{days[day]}</dt><dd className="text-white text-right">{hours ? `${formatTime(hours.open)} – ${formatTime(hours.close)}` : 'Closed'}</dd></div>;
+                })}</dl>
+              </div>
+            </div>
+            <iframe title="Lavash Lebanese Cuisine location on Google Maps" src={'https://maps.google.com/maps?q=' + encodeURIComponent('Lavash Lebanese Cuisine ' + ADDRESS) + '&output=embed'} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-96 lg:h-full lg:min-h-[560px] border-0" />
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-          <article className="bg-surface-dark border border-border-hard p-6 flex flex-col gap-4">
-            <MapPin aria-hidden="true" className="text-primary" /><h3 className="font-display text-2xl uppercase text-white">Find Lavash</h3>
-            <address className="not-italic text-text-smoke">{ADDRESS}</address><a href="tel:+17344951115" className={linkClass}>(734) 495-1115</a>
-            <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>Get directions <ArrowUpRight aria-hidden="true" className="w-4 h-4" /></a>
-          </article>
-          <article className="bg-surface-dark border border-border-hard p-6 flex flex-col gap-4">
-            <Clock aria-hidden="true" className="text-primary" /><h3 className="font-display text-2xl uppercase text-white">Opening hours</h3>
-            <p className={isOpen ? 'text-brand-green' : 'text-text-smoke'}>{label} · Canton time</p>
-            <dl className="text-sm space-y-2">{[1, 2, 3, 4, 5, 6, 0].map(day => {
-              const hours = SCHEDULE[day];
-              return <div key={day} className="flex justify-between gap-3"><dt className="text-text-smoke">{days[day]}</dt><dd className="text-white text-right">{hours ? `${formatTime(hours.open)} – ${formatTime(hours.close)}` : 'Closed'}</dd></div>;
-            })}</dl>
-          </article>
-          <article className="bg-surface-dark border border-border-hard p-6 flex flex-col gap-4">
-            <MessageSquare aria-hidden="true" className="text-primary" /><h3 className="font-display text-2xl uppercase text-white">Google reviews</h3>
-            <p className="text-text-smoke">See what our guests are saying on Google. Enjoyed your visit? Share your experience with us.</p>
-            <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>Read &amp; leave a review <ArrowUpRight aria-hidden="true" className="w-4 h-4" /></a>
-          </article>
-          <article className="bg-surface-dark border border-border-hard p-6 flex flex-col gap-4">
-            <Instagram aria-hidden="true" className="text-primary" /><h3 className="font-display text-2xl uppercase text-white">Follow the flavor</h3>
-            <p className="text-text-smoke">Fresh from our kitchen: food, specials, and the latest from Lavash.</p>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={`${linkClass} break-all`}>@lavashlebanesecuisine <ArrowUpRight aria-hidden="true" className="w-4 h-4 shrink-0" /></a>
-          </article>
+      </section>
+      <section aria-labelledby="instagram-heading" className="border-t border-border-hard bg-surface-dark px-6 py-10 md:px-10">
+        <div className="max-w-[1520px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div><h2 id="instagram-heading" className="font-display text-3xl uppercase text-white flex items-center gap-3"><Instagram aria-hidden="true" className="text-primary" /> Follow the flavor</h2><p className="text-text-smoke mt-3">Food, specials, and the latest from our kitchen.</p></div>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={`${linkClass} break-all`}>@lavashlebanesecuisine <ArrowUpRight aria-hidden="true" className="w-4 h-4 shrink-0" /></a>
         </div>
-        <iframe title="Lavash Lebanese Cuisine location on Google Maps" src={'https://maps.google.com/maps?q=' + encodeURIComponent('Lavash Lebanese Cuisine ' + ADDRESS) + '&output=embed'} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-72 md:h-96 mt-6 border-0 rounded-lg" />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

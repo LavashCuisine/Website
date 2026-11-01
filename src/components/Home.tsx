@@ -1,7 +1,8 @@
 import React from 'react';
-import { ArrowRight, Star, ThumbsUp } from 'lucide-react';
+import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
 import useStoreHours from '../hooks/useStoreHours';
 import VisitUs from './VisitUs';
+import GoogleReviews from './GoogleReviews';
 import { INSTAGRAM_URL, GOOGLE_MAPS_URL } from '../business';
 
 interface HomeProps {
@@ -13,7 +14,11 @@ export default function Home({ setCurrentView }: HomeProps) {
 
   return (
     <div className="w-full">
-      <header className="relative w-full h-[85vh] flex items-center justify-center overflow-hidden border-b border-border-hard">
+      <div className="bg-brand-green text-white border-b border-white/20 px-4 py-5 md:py-7 flex items-center justify-center gap-3 md:gap-5 text-center">
+        <ShieldCheck aria-hidden="true" className="w-9 h-9 md:w-12 md:h-12 shrink-0" />
+        <p className="font-display text-3xl md:text-5xl uppercase tracking-wide">100% Certified Halal</p>
+      </div>
+      <header className="relative w-full min-h-[640px] py-16 flex items-center justify-center overflow-hidden border-b border-border-hard">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -161,17 +166,13 @@ export default function Home({ setCurrentView }: HomeProps) {
                 </div>
               </article>
 
-              <div className="border border-dashed border-border-hard p-4 flex items-center gap-4 text-text-smoke">
-                <div className="w-10 h-10 rounded-full bg-border-hard flex items-center justify-center shrink-0">
-                  <ThumbsUp className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-sm font-body">"Best shawarma in Detroit metro area hands down. The garlic sauce is lethal." <br/><span className="text-primary font-bold">- @kobeseats</span></p>
-              </div>
+
             </div>
           </div>
         </aside>
       </main>
 
+      <GoogleReviews />
       <VisitUs />
 
       <footer className="border-t border-border-hard bg-background-dark pt-16 pb-8">
