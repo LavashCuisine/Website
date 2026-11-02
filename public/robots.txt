@@ -1,0 +1,5 @@
+# Public search and user-requested retrieval are allowed.
+User-agent: *
+Allow: /
+
+Sitemap: https://lavashmi.com/sitemap.xml
