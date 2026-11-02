@@ -50,9 +50,11 @@ function getStatus(): StoreHoursInfo {
 }
 
 export default function useStoreHours(): StoreHoursInfo {
-  const [status, setStatus] = useState(getStatus);
+  // Identical server/client first render; do not freeze build-time opening status into HTML.
+  const [status, setStatus] = useState<StoreHoursInfo>({ isOpen: false, label: 'Open until 9 PM everyday' });
 
   useEffect(() => {
+    setStatus(getStatus());
     const id = setInterval(() => setStatus(getStatus()), 60_000);
     return () => clearInterval(id);
   }, []);
