@@ -5,13 +5,14 @@ import { ADDRESS, DIRECTIONS_URL, INSTAGRAM_URL } from '../business';
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const linkClass = 'inline-flex items-center gap-2 text-white font-bold underline decoration-primary underline-offset-4 hover:text-primary transition-colors';
 
-export default function VisitUs() {
+export default function VisitUs({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? 'h1' : 'h2';
   return (
     <>
       <section id="visit-us" aria-labelledby="visit-heading" className="scroll-mt-28 border-t border-border-hard bg-background-dark px-6 py-14 md:px-10 md:py-20">
         <div className="max-w-[1520px] mx-auto">
           <p className="font-sub uppercase tracking-widest text-brand-green mb-3">46042 Michigan Avenue · Canton</p>
-          <h2 id="visit-heading" className="font-display text-5xl md:text-7xl uppercase text-white mb-10">Find us. Come hungry.</h2>
+          <Heading id="visit-heading" className="font-display text-5xl md:text-7xl uppercase text-white mb-10">{standalone ? 'Lavash Location & Hours in Canton, MI' : 'Find us. Come hungry.'}</Heading>
           <div className="grid lg:grid-cols-2 border border-border-hard bg-surface-dark overflow-hidden rounded-lg">
             <div className="p-6 md:p-10 space-y-8">
               <div className="space-y-4">

@@ -5,11 +5,7 @@ import VisitUs from './VisitUs';
 import GoogleReviews from './GoogleReviews';
 import { INSTAGRAM_URL, GOOGLE_MAPS_URL } from '../business';
 
-interface HomeProps {
-  setCurrentView: (view: string) => void;
-}
-
-export default function Home({ setCurrentView }: HomeProps) {
+export default function Home() {
   const { isOpen, label } = useStoreHours();
 
   return (
@@ -36,7 +32,7 @@ export default function Home({ setCurrentView }: HomeProps) {
             Canton's<br/>Loudest<br/>Flavors
           </h1>
           <p className="font-sub text-base md:text-2xl text-text-smoke uppercase tracking-wide md:tracking-widest max-w-2xl mt-2 md:mt-4">
-            Authentic Lebanese Street Food • Chaotic Good
+            Lavash Lebanese Cuisine • Halal Lebanese Restaurant in Canton, MI
           </p>
           <div className="mt-4 md:mt-8 group">
             <a
@@ -77,15 +73,15 @@ export default function Home({ setCurrentView }: HomeProps) {
         <section className="lg:col-span-8 min-w-0 lg:border-r border-border-hard p-6 md:p-10">
           <div className="flex items-end justify-between mb-10 border-b border-border-hard pb-4">
             <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">The Heavy<br/>Hitters</h2>
-            <button onClick={() => setCurrentView('menu')} className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-white transition-colors uppercase text-sm tracking-wider">
+            <a href="/menu" className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-white transition-colors uppercase text-sm tracking-wider">
               View Full Menu <ArrowRight className="w-4 h-4 -rotate-45" />
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="md:col-span-2 group">
               <div className="relative w-full min-w-0 h-[320px] sm:h-[360px] md:h-auto md:aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="/beirut-loaded-fries.png" alt="Chicken Shawarma Bowl W/ Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img loading="lazy" decoding="async" src="/beirut-loaded-fries.png" alt="Chicken Shawarma Bowl W/ Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 p-6 md:p-8">
                   <h3 className="font-display text-3xl md:text-4xl uppercase text-white mb-2 group-hover:text-primary transition-colors">Chicken Shawarma Bowl W/ Fries</h3>
@@ -96,7 +92,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
             <div className="md:col-span-2 group">
               <div className="relative w-full min-w-0 h-[260px] sm:h-[320px] md:h-auto md:aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
-                <img src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img loading="lazy" decoding="async" src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">The O.G. Falafel</h3>
@@ -106,7 +102,7 @@ export default function Home({ setCurrentView }: HomeProps) {
             </div>
 
             <div className="md:col-span-2 relative mt-4 overflow-hidden group border border-border-hard bg-surface-dark">
-              <img src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-[center_70%] md:object-center object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img loading="lazy" decoding="async" src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-[center_70%] md:object-center object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/95 via-black/70 to-transparent md:to-black/20 z-10"></div>
               <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 h-full min-h-[300px]">
                 <div className="text-center md:text-left mt-auto md:mt-0 max-w-xl">
@@ -136,7 +132,7 @@ export default function Home({ setCurrentView }: HomeProps) {
                   <span className="bg-primary text-white text-xs font-bold uppercase px-2 py-1 shadow-lg transform rotate-3 inline-block">Viral #1</span>
                 </div>
                 <div className="aspect-[4/3] w-full overflow-hidden">
-                  <img src="/spicy-chicken-manoushi.png" alt="Spicy Chicken Manoushi" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img loading="lazy" decoding="async" src="/spicy-chicken-manoushi.png" alt="Spicy Chicken Manoushi" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <div className="flex justify-between items-start mb-2">
@@ -151,7 +147,7 @@ export default function Home({ setCurrentView }: HomeProps) {
 
               <article className="relative bg-surface-dark border border-border-hard group hover:border-primary transition-colors duration-300 opacity-80 hover:opacity-100">
                 <div className="aspect-[4/3] w-full overflow-hidden">
-                  <img src="/hommous.png" alt="Hommous" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img loading="lazy" decoding="async" src="/hommous.png" alt="Hommous" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <div className="flex justify-between items-start mb-2">
@@ -169,6 +165,18 @@ export default function Home({ setCurrentView }: HomeProps) {
         </aside>
       </main>
 
+      <section aria-labelledby="lavash-questions" className="border-t border-border-hard px-6 py-14 md:px-10 bg-surface-dark">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <h2 id="lavash-questions" className="font-display text-4xl uppercase">Lebanese food in Canton, Michigan</h2>
+          <p className="text-text-smoke">Lavash Lebanese Cuisine serves chicken shawarma, shish tawook, falafel, hommous, and Lebanese street food at 46042 Michigan Ave, Canton, MI 48188.</p>
+          <h3 className="font-display text-2xl">Is Lavash Halal?</h3>
+          <p className="text-text-smoke">Yes. Lavash Lebanese Cuisine is 100% Certified Halal.</p>
+          <h3 className="font-display text-2xl">How can I order?</h3>
+          <p className="text-text-smoke">Browse our <a href="/menu" className="text-white underline">menu</a> and order through Toast. For catering and large orders, see our <a href="/catering" className="text-white underline">catering page</a> or call <a href="tel:+17344951115" className="text-white underline">(734) 495-1115</a>.</p>
+          <h3 className="font-display text-2xl">When does Lavash close?</h3>
+          <p className="text-text-smoke">Open until 9 PM everyday. See our <a href="/location" className="text-white underline">location and weekly opening hours</a> for your visit.</p>
+        </div>
+      </section>
       <GoogleReviews />
       <VisitUs />
 
@@ -180,7 +188,7 @@ export default function Home({ setCurrentView }: HomeProps) {
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
               <a href="https://www.tiktok.com/@lavashlebanesecuisine" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a>
-              <a href="#visit-us" className="hover:text-primary transition-colors">Location & Hours</a>
+              <a href="/location" className="hover:text-primary transition-colors">Location & Hours</a>
             </div>
           </div>
         </div>

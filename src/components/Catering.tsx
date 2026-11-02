@@ -1,9 +1,6 @@
 import React from 'react';
+import { INSTAGRAM_URL } from '../business';
 import { ArrowRight, Phone, ExternalLink, UtensilsCrossed, Users, Truck, Flame, PartyPopper, Briefcase, GraduationCap, Trophy } from 'lucide-react';
-
-interface CateringProps {
-  setCurrentView: (view: string) => void;
-}
 
 const PHONE_NUMBER = 'tel:+17344951115';
 
@@ -45,7 +42,7 @@ const useCases = [
   { label: 'Corporate Events', icon: Briefcase },
 ];
 
-export default function Catering({ setCurrentView }: CateringProps) {
+export default function Catering() {
   return (
     <div className="w-full">
       {/* Hero */}
@@ -67,7 +64,7 @@ export default function Catering({ setCurrentView }: CateringProps) {
             Feed the<br />Crew
           </h1>
           <p className="font-sub text-lg md:text-2xl text-text-smoke uppercase tracking-widest max-w-2xl mt-2">
-            Events, offices, parties — we bring the full Lavash experience to your table.
+            Halal Lebanese catering in Canton, MI for events, offices, and parties.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
             <a
@@ -188,11 +185,11 @@ export default function Catering({ setCurrentView }: CateringProps) {
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-[12vw] leading-none text-white/5 uppercase select-none pointer-events-none">Lavash</h2>
           <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-border-hard text-text-smoke text-sm uppercase tracking-wider">
-            <p>&copy; 2024 Lavash Lebanese Cuisine. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Lavash Lebanese Cuisine. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-primary transition-colors">Instagram</a>
-              <a href="#" className="hover:text-primary transition-colors">TikTok</a>
-              <a href="#" className="hover:text-primary transition-colors">Locations</a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+              <a href="https://www.tiktok.com/@lavashlebanesecuisine" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">TikTok</a>
+              <a href="/location" className="hover:text-primary transition-colors">Location &amp; Hours</a>
             </div>
           </div>
         </div>

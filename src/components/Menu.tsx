@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Clock } from 'lucide-react';
 import useStoreHours from '../hooks/useStoreHours';
 
-interface MenuProps {
-  setCurrentView: (view: string) => void;
-}
-
 interface MenuItem {
   id: string;
   name: string;
@@ -23,9 +19,9 @@ interface MenuCategory {
   items: MenuItem[];
 }
 
-const SKYTAB_URL = 'https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave';
+const ORDER_URL = 'https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave';
 
-const categories: MenuCategory[] = [
+export const categories: MenuCategory[] = [
   {
     id: 'wraps-sandwiches',
     label: 'Wraps & Sandwiches',
@@ -151,7 +147,7 @@ const categories: MenuCategory[] = [
   }
 ];
 
-export default function Menu({ setCurrentView }: MenuProps) {
+export default function Menu() {
   const { isOpen, label } = useStoreHours();
   const [activeCategory, setActiveCategory] = useState<string>(categories[0].id);
 
@@ -185,7 +181,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
       <aside className="hidden lg:flex flex-col w-64 h-full border-r border-border-hard bg-background-dark overflow-y-auto py-8 pl-10 pr-4 shrink-0">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1">
-            <h1 className="text-white font-display text-4xl uppercase leading-none tracking-tight mb-2">The<br />Menu</h1>
+            <p className="text-white font-display text-4xl uppercase leading-none tracking-tight mb-2">The<br />Menu</p>
             <p className="text-text-smoke text-xs uppercase tracking-widest text-brand-yellow">Authentic Lebanese</p>
           </div>
 
@@ -222,15 +218,16 @@ export default function Menu({ setCurrentView }: MenuProps) {
 
       <main id="menu-scroll-container" className="flex-1 min-w-0 p-4 md:p-8 lg:p-12 overflow-y-auto h-full relative">
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.02] z-0 select-none">
-          <h1 className="text-[20vw] font-display text-white uppercase leading-none whitespace-nowrap">LAVASH</h1>
+          <p aria-hidden="true" className="text-[20vw] font-display text-white uppercase leading-none whitespace-nowrap">LAVASH</p>
         </div>
 
         <div className="max-w-6xl mx-auto flex flex-col gap-10 md:gap-16 relative z-10 pb-20">
+          <header><h1 className="font-display text-4xl sm:text-5xl uppercase">Halal Lebanese Menu in Canton, MI</h1><p className="text-text-smoke mt-4">Shawarma, bowls, falafel, starters, and desserts from Lavash Lebanese Cuisine. View current prices and availability on Toast.</p></header>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between bg-surface-dark border border-border-hard rounded-lg p-5">
             <p className="text-white font-sub text-lg uppercase tracking-wide">View full menu & order online</p>
             <a
-              href={SKYTAB_URL}
+              href={ORDER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-primary hover:bg-red-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-sm transition-colors shrink-0"
@@ -266,6 +263,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                           )}
                           <img
                             src={item.img}
+                            loading="lazy" decoding="async"
                             alt={item.name}
                             className="object-cover w-full h-full"
                           />
@@ -285,7 +283,7 @@ export default function Menu({ setCurrentView }: MenuProps) {
                               <span key={tag} className="text-xs border border-border-hard text-text-smoke px-1.5 py-0.5 rounded">{tag}</span>
                             ))}
                           </div>
-                          <a href={SKYTAB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-lg bg-[#27272A] hover:bg-primary text-white transition-colors group/btn">
+                          <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-lg bg-[#27272A] hover:bg-primary text-white transition-colors group/btn">
                             <ArrowRight className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
                           </a>
                         </div>
@@ -303,13 +301,13 @@ export default function Menu({ setCurrentView }: MenuProps) {
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>
                       <h2 className="text-white font-display text-4xl md:text-5xl uppercase leading-[0.9] mb-2">Feeding the crew?<br /><span className="text-primary">Get the Lavash Tray.</span></h2>
-                      <p className="text-text-smoke text-lg">Serves 10-12 hungry humans. Includes all meats, all sides, and extra garlic sauce.</p>
+                      <p className="text-text-smoke text-lg">Call us to plan your catering order and confirm portions, options, and pricing.</p>
                     </div>
                     <div className="flex flex-col items-end">
-                      <button onClick={() => setCurrentView('catering')} className="flex items-center gap-2 bg-white text-black hover:bg-zinc-200 px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-colors">
+                      <a href="/catering" className="flex items-center gap-2 bg-white text-black hover:bg-zinc-200 px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-colors">
                         View Catering
                         <ArrowRight className="w-5 h-5" />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </section>
@@ -318,9 +316,9 @@ export default function Menu({ setCurrentView }: MenuProps) {
           ))}
 
           <div className="flex flex-col items-center gap-4 py-8 border-t border-border-hard">
-            <p className="text-text-smoke text-center text-lg">Ready to order? View our full menu with pricing on SkyTab.</p>
+            <p className="text-text-smoke text-center text-lg">Ready to order? View our full menu with pricing on Toast.</p>
             <a
-              href={SKYTAB_URL}
+              href={ORDER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-primary hover:bg-red-600 text-white px-10 py-4 rounded-lg font-display text-2xl uppercase tracking-wide transition-colors"
