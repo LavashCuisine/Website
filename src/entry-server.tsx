@@ -7,7 +7,7 @@ import { categories } from './components/Menu';
 export const pages = [
   { path: '/', title: 'Halal Lebanese Restaurant in Canton, MI | Lavash', description: 'Visit Lavash Lebanese Cuisine in Canton, MI for 100% Certified Halal shawarma, falafel, bowls, and Lebanese food. Open until 9 PM every day.' },
   { path: '/menu', title: 'Halal Lebanese Menu | Shawarma & Bowls | Lavash Canton', description: 'Explore Lavash’s Lebanese menu: chicken shawarma, shish tawook bowls, falafel, hommous, and more. See current prices and order online through Toast.' },
-  { path: '/catering', title: 'Halal Lebanese Catering in Canton, MI | Lavash', description: 'Plan your next office lunch, family gathering, or event with Lavash Lebanese catering in Canton, Michigan. Call (734) 495-1115 for large orders.' },
+  { path: '/catering', title: 'Halal Lebanese Catering in Canton, MI | Lavash', description: 'Halal Lebanese catering in Canton, MI for office lunches, parties, and gatherings. Order on ezCater or call Lavash at (734) 495-1115.' },
   { path: '/location', title: 'Location & Hours | Lavash Lebanese Cuisine | Canton, MI', description: 'Find Lavash at 46042 Michigan Ave, Canton, MI 48188. See weekly hours, get directions, or call (734) 495-1115. Open until 9 PM every day.' },
   { path: '/404', title: 'Page Not Found | Lavash Lebanese Cuisine', description: 'Return to Lavash Lebanese Cuisine to browse our menu, catering, location, and hours.' },
 ];
