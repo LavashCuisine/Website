@@ -3,33 +3,34 @@ import { INSTAGRAM_URL } from '../business';
 import { ArrowRight, Phone, ExternalLink, UtensilsCrossed, Users, Truck, Flame, PartyPopper, Briefcase, GraduationCap, Trophy } from 'lucide-react';
 
 const PHONE_NUMBER = 'tel:+17344951115';
+const EZCATER_URL = 'https://www.ezcater.com/catering/lavash-lebanese-cuisine-3';
 
 const categories = [
   {
     icon: UtensilsCrossed,
     title: 'Trays & Platters',
-    description: 'Hummus, baba ganoush, tabbouleh, fattoush — all the classics in shareable trays that feed the whole crew.',
+    description: 'Build your spread with hummus, baba ghanouj, fattoush, tabbouli, rice, and sides.',
   },
   {
     icon: Flame,
     title: 'Skewers & Grills',
-    description: 'Chicken tawook, kafta, beef kabob, and lamb chops fresh off the grill. The centerpiece of any spread.',
+    description: 'Choose chicken, beef, or mixed shawarma, plus shish tawook, kafta, and kabob skewers.',
   },
   {
     icon: Truck,
     title: 'Wings & Tenders',
-    description: 'Our signature wings and hand-breaded tenders tossed in house sauces. Game day approved.',
+    description: 'Whole wings, sweet BBQ boneless chicken wings, and chicken tenders for group orders.',
   },
   {
     icon: Users,
     title: 'Sandwiches & Pies',
-    description: 'Shawarma wraps, falafel sandwiches, and meat pies — easy grab-and-go for any crowd.',
+    description: 'Chicken shawarma, beef shawarma, falafel sandwiches, and spinach or meat pies for your gathering.',
   },
 ];
 
 const steps = [
-  { number: '01', title: 'Browse the Menu', description: 'Check out our full catering menu on our ordering page.' },
-  { number: '02', title: 'Place Your Order', description: 'Order online for pickup or call us for custom and large orders.' },
+  { number: '01', title: 'Browse the Menu', description: 'Browse our catering menu and current pricing on ezCater.' },
+  { number: '02', title: 'Place Your Order', description: 'Place your catering order on ezCater or call (734) 495-1115 to discuss your event.' },
   { number: '03', title: 'We Prep It Fresh', description: 'Everything is made fresh for your event. No shortcuts, no compromises.' },
 ];
 
@@ -64,21 +65,21 @@ export default function Catering() {
             Feed the<br />Crew
           </h1>
           <p className="font-sub text-lg md:text-2xl text-text-smoke uppercase tracking-widest max-w-2xl mt-2">
-            Halal Lebanese catering in Canton, MI for events, offices, and parties.
+            100% Certified Halal Lebanese catering in Canton, MI for events, offices, and parties. Order on ezCater or call the restaurant.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
+              href={EZCATER_URL}
               className="flex items-center gap-3 bg-primary hover:bg-red-700 text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all transform hover:scale-105 shadow-[0_0_40px_-10px_rgba(217,37,37,0.6)]"
             >
-              Order Catering
+              Order on ezCater
               <ExternalLink className="w-6 h-6" />
             </a>
             <a
               href={PHONE_NUMBER}
               className="flex items-center gap-3 border-2 border-white/30 hover:border-white text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all hover:bg-white/5"
             >
-              Call Us
+              Call for Catering
               <Phone className="w-6 h-6" />
             </a>
           </div>
@@ -159,21 +160,21 @@ export default function Catering() {
             Ready to Feed<br />the Crowd?
           </h2>
           <p className="font-sub text-lg text-white/80 uppercase tracking-widest max-w-xl">
-            Order online or call us for custom menus and large event pricing.
+            Order on ezCater or call (734) 495-1115 for custom menus and large event pricing.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave"
+              href={EZCATER_URL}
               className="flex items-center gap-3 bg-white text-primary hover:bg-black hover:text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all transform hover:scale-105"
             >
-              Order Catering
+              Order on ezCater
               <ExternalLink className="w-6 h-6" />
             </a>
             <a
               href={PHONE_NUMBER}
               className="flex items-center gap-3 border-2 border-white/50 hover:border-white text-white font-display text-xl md:text-2xl px-6 py-4 md:px-10 md:py-5 uppercase tracking-wider transition-all hover:bg-white/10"
             >
-              Call Us
+              Call for Catering
               <Phone className="w-6 h-6" />
             </a>
           </div>
