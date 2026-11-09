@@ -1,5 +1,6 @@
 import React from 'react';
 import { INSTAGRAM_URL } from '../business';
+import OptimizedImage from './OptimizedImage';
 import { ArrowRight, Phone, ExternalLink, UtensilsCrossed, Users, Truck, Flame, PartyPopper, Briefcase, GraduationCap, Trophy } from 'lucide-react';
 
 const PHONE_NUMBER = 'tel:+17344951115';
@@ -51,21 +52,18 @@ export default function Catering() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-background-dark/30 z-10"></div>
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url('/new_lavash_tray.png')" }}
-          ></div>
+          <OptimizedImage src="/new_lavash_tray.png" alt="" loading="eager" fetchPriority="high" sizes="100vw" className="w-full h-full object-cover object-center" />
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-5 md:gap-6 py-12 md:py-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/20 border border-brand-green/50 text-brand-green text-xs font-bold uppercase tracking-widest">
             <UtensilsCrossed className="w-3 h-3" />
-            Catering & Large Orders
+            Feed the Crew
           </div>
-          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-[120px] leading-[0.85] uppercase text-white">
-            Feed the<br />Crew
+          <h1 className="font-display text-[clamp(2.75rem,10vw,5.5rem)] lg:text-[104px] leading-[0.95] uppercase text-white max-w-5xl">
+            Halal Lebanese{' '}<br className="hidden sm:block" />catering in Canton
           </h1>
           <p className="font-sub text-lg md:text-2xl text-text-smoke uppercase tracking-widest max-w-2xl mt-2">
-            100% Certified Halal Lebanese catering in Canton, MI for events, offices, and parties. Order on ezCater or call the restaurant.
+            Shawarma, trays, and Lebanese favorites for office lunches, family gatherings, and events in Canton, MI. Order on ezCater or call Lavash.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
             <a
@@ -148,13 +146,26 @@ export default function Catering() {
         </div>
       </section>
 
+      <section aria-labelledby="catering-questions" className="border-t border-border-hard bg-surface-dark">
+        <div className="max-w-4xl mx-auto px-6 py-14 md:px-10 md:py-20 space-y-6">
+          <h2 id="catering-questions" className="font-display text-3xl md:text-5xl uppercase text-white">Planning your catering order</h2>
+          <h3 className="font-display text-2xl">Is Lavash catering halal?</h3>
+          <p className="text-text-smoke">Yes. Lavash Lebanese Cuisine is 100% halal. Our catering menu includes shawarma, trays, skewers, sandwiches, and sides.</p>
+          <h3 className="font-display text-2xl">Where can I see catering prices and place an order?</h3>
+          <p className="text-text-smoke">Browse our <a href={EZCATER_URL} className="text-white underline">catering menu and current prices on ezCater</a>. For a custom menu or questions about your event, call <a href={PHONE_NUMBER} className="text-white underline">(734) 495-1115</a>.</p>
+          <h3 className="font-display text-2xl">How much food should I order?</h3>
+          <p className="text-text-smoke">Portions depend on your menu and group size. Check the item details on ezCater, or call us with your guest count to discuss trays, portions, and options.</p>
+          <h3 className="font-display text-2xl">How far ahead should I order? Is there a minimum?</h3>
+          <p className="text-text-smoke">Check ezCater for the options available for your event date, or call Lavash to confirm lead time, minimum order, and availability before making plans.</p>
+          <h3 className="font-display text-2xl">Can I arrange pickup or delivery?</h3>
+          <p className="text-text-smoke">Enter your event address and date on ezCater to check available options. For pickup or other arrangements, call the restaurant. Pickup is at <a href="/location" className="text-white underline">46042 Michigan Ave in Canton</a>.</p>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="relative overflow-hidden border-b border-border-hard">
         <div className="absolute inset-0 bg-primary/90 z-10"></div>
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-30"
-          style={{ backgroundImage: "url('/new_lavash_tray.png')" }}
-        ></div>
+        <OptimizedImage src="/new_lavash_tray.png" alt="" sizes="100vw" className="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply opacity-30" />
         <div className="relative z-20 max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-28 text-center flex flex-col items-center gap-6">
           <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase text-white leading-none">
             Ready to Feed<br />the Crowd?

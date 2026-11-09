@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Clock } from 'lucide-react';
 import useStoreHours from '../hooks/useStoreHours';
+import OptimizedImage from './OptimizedImage';
 
 interface MenuItem {
   id: string;
@@ -261,8 +262,9 @@ export default function Menu() {
                               {item.badge}
                             </div>
                           )}
-                          <img
+                          <OptimizedImage
                             src={item.img}
+                            sizes="(min-width: 1280px) 320px, (min-width: 768px) 45vw, 100vw"
                             loading="lazy" decoding="async"
                             alt={item.name}
                             className="object-cover w-full h-full"
@@ -296,7 +298,7 @@ export default function Menu() {
               {catIndex === 1 && (
                 <section className="relative w-full rounded-xl overflow-hidden group cursor-pointer border-2 border-transparent hover:border-primary transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-                  <img src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-cover" />
+                  <OptimizedImage src="/new_lavash_tray.png" sizes="(min-width: 1024px) 75vw, 100vw" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div className="max-w-xl">
                       <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block">Catering</span>

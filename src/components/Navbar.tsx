@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu as MenuIcon, X } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 interface NavbarProps {
   currentView: string;
@@ -19,7 +20,7 @@ export default function Navbar({ currentView }: NavbarProps) {
     <nav aria-label="Main navigation" className="fixed top-0 inset-x-0 z-40 border-b border-border-hard bg-[#0a0a0a]">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-20 md:h-24 flex items-center justify-between gap-3">
         <a href="/" aria-label="Lavash home" className="shrink-0 focus-visible:outline-2 focus-visible:outline-white rounded">
-          <img src="/40d5f3fe-bf32-42eb-8908-98dd60b9e62e.PNG" alt="Lavash Lebanese Cuisine" className="h-24 w-24 md:h-32 md:w-32 object-contain" />
+          <OptimizedImage src="/40d5f3fe-bf32-42eb-8908-98dd60b9e62e.PNG" alt="Lavash Lebanese Cuisine" loading="eager" sizes="(min-width: 768px) 128px, 96px" className="h-24 w-24 md:h-32 md:w-32 object-contain" />
         </a>
         <div className="hidden md:flex items-center gap-3 lg:gap-6">
           <a href="/menu" aria-current={currentView === 'menu' ? 'page' : undefined} className={navClass}>Menu</a>

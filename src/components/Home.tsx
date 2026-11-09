@@ -1,8 +1,10 @@
 import React from 'react';
-import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import useStoreHours from '../hooks/useStoreHours';
 import VisitUs from './VisitUs';
 import GoogleReviews from './GoogleReviews';
+import OptimizedImage from './OptimizedImage';
+import HalalSeal from './HalalSeal';
 import { INSTAGRAM_URL, GOOGLE_MAPS_URL } from '../business';
 
 export default function Home() {
@@ -10,29 +12,26 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <div className="bg-brand-green text-white border-b border-white/20 px-4 py-5 md:py-7 flex items-center justify-center gap-3 md:gap-5 text-center">
-        <ShieldCheck aria-hidden="true" className="w-9 h-9 md:w-12 md:h-12 shrink-0" />
-        <p className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-wide">100% Certified Halal</p>
-      </div>
       <header className="relative w-full min-h-[520px] md:min-h-[640px] py-10 md:py-16 flex items-center justify-center overflow-hidden border-b border-border-hard">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
-          <div 
-            className="w-full h-full bg-cover bg-center" 
-            style={{ backgroundImage: "url('/hero-image.jpg')" }}
-          ></div>
+          <OptimizedImage src="/hero-image.jpg" alt="" loading="eager" fetchPriority="high" sizes="100vw" className="w-full h-full object-cover object-center" />
         </div>
         <div className="relative z-20 container mx-auto px-4 text-center flex flex-col items-center gap-5 md:gap-6">
-          <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/60 bg-[#101012] px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wide text-white shadow-lg mb-4">
-            <span aria-hidden="true" className={`w-3 h-3 rounded-full shrink-0 ${isOpen ? 'bg-green-400' : 'bg-zinc-300'}`} />
-            <span>{isOpen ? `Kitchen Live • ${label}` : label}</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5 mb-2">
+            <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/60 bg-[#101012] px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wide text-white shadow-lg">
+              <span aria-hidden="true" className={`w-3 h-3 rounded-full shrink-0 ${isOpen ? 'bg-green-400' : 'bg-zinc-300'}`} />
+              <span>{isOpen ? `Kitchen Live • ${label}` : label}</span>
+            </div>
+            <HalalSeal />
           </div>
-          <h1 className="font-display text-[clamp(3rem,14vw,6rem)] md:text-8xl lg:text-[140px] leading-[0.85] uppercase text-white mix-blend-overlay opacity-90">
-            Canton's<br/>Loudest<br/>Flavors
+          <p className="font-sub text-brand-yellow uppercase tracking-[0.15em] text-sm md:text-lg">Canton’s loudest flavors</p>
+          <h1 className="font-display text-[clamp(2.75rem,10vw,5.5rem)] lg:text-[104px] leading-[0.95] uppercase text-white max-w-5xl">
+            Halal Lebanese{' '}<br className="hidden sm:block" />food in Canton, MI
           </h1>
           <p className="font-sub text-base md:text-2xl text-text-smoke uppercase tracking-wide md:tracking-widest max-w-2xl mt-2 md:mt-4">
-            Lavash Lebanese Cuisine • Halal Lebanese Restaurant in Canton, MI
+            Shawarma, falafel, bowls, and Lebanese street food at Lavash Lebanese Cuisine.
           </p>
           <div className="mt-4 md:mt-8 group">
             <a
@@ -81,7 +80,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="md:col-span-2 group">
               <div className="relative w-full min-w-0 h-[320px] sm:h-[360px] md:h-auto md:aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
-                <img loading="lazy" decoding="async" src="/beirut-loaded-fries.png" alt="Chicken Shawarma Bowl W/ Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <OptimizedImage loading="lazy" decoding="async" sizes="(min-width: 1600px) 960px, (min-width: 1024px) 66vw, 100vw" src="/beirut-loaded-fries.png" alt="Chicken Shawarma Bowl W/ Fries" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 p-6 md:p-8">
                   <h3 className="font-display text-3xl md:text-4xl uppercase text-white mb-2 group-hover:text-primary transition-colors">Chicken Shawarma Bowl W/ Fries</h3>
@@ -92,7 +91,7 @@ export default function Home() {
 
             <div className="md:col-span-2 group">
               <div className="relative w-full min-w-0 h-[260px] sm:h-[320px] md:h-auto md:aspect-[16/9] overflow-hidden bg-surface-dark border border-border-hard">
-                <img loading="lazy" decoding="async" src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <OptimizedImage loading="lazy" decoding="async" sizes="(min-width: 1600px) 960px, (min-width: 1024px) 66vw, 100vw" src="/og-falafel.png" alt="Falafel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-display text-3xl uppercase text-white mb-1 group-hover:text-primary transition-colors">The O.G. Falafel</h3>
@@ -102,7 +101,7 @@ export default function Home() {
             </div>
 
             <div className="md:col-span-2 relative mt-4 overflow-hidden group border border-border-hard bg-surface-dark">
-              <img loading="lazy" decoding="async" src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-[center_70%] md:object-center object-cover transition-transform duration-700 group-hover:scale-105" />
+              <OptimizedImage loading="lazy" decoding="async" sizes="(min-width: 1600px) 960px, (min-width: 1024px) 66vw, 100vw" src="/new_lavash_tray.png" alt="Lavash Tray" className="absolute inset-0 w-full h-full object-[center_70%] md:object-center object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/95 via-black/70 to-transparent md:to-black/20 z-10"></div>
               <div className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 h-full min-h-[300px]">
                 <div className="text-center md:text-left mt-auto md:mt-0 max-w-xl">
@@ -132,7 +131,7 @@ export default function Home() {
                   <span className="bg-primary text-white text-xs font-bold uppercase px-2 py-1 shadow-lg transform rotate-3 inline-block">Viral #1</span>
                 </div>
                 <div className="aspect-[4/3] w-full overflow-hidden">
-                  <img loading="lazy" decoding="async" src="/spicy-chicken-manoushi.png" alt="Spicy Chicken Manoushi" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <OptimizedImage loading="lazy" decoding="async" sizes="(min-width: 1600px) 960px, (min-width: 1024px) 66vw, 100vw" src="/spicy-chicken-manoushi.png" alt="Spicy Chicken Manoushi" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <div className="flex justify-between items-start mb-2">
@@ -147,7 +146,7 @@ export default function Home() {
 
               <article className="relative bg-surface-dark border border-border-hard group hover:border-primary transition-colors duration-300 opacity-80 hover:opacity-100">
                 <div className="aspect-[4/3] w-full overflow-hidden">
-                  <img loading="lazy" decoding="async" src="/hommous.png" alt="Hommous" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <OptimizedImage loading="lazy" decoding="async" sizes="(min-width: 1600px) 960px, (min-width: 1024px) 66vw, 100vw" src="/hommous.png" alt="Hommous" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <div className="flex justify-between items-start mb-2">
@@ -167,14 +166,18 @@ export default function Home() {
 
       <section aria-labelledby="lavash-questions" className="border-t border-border-hard px-6 py-14 md:px-10 bg-surface-dark">
         <div className="max-w-4xl mx-auto space-y-6">
-          <h2 id="lavash-questions" className="font-display text-4xl uppercase">Lebanese food in Canton, Michigan</h2>
+          <h2 id="lavash-questions" className="font-display text-3xl md:text-4xl uppercase">Planning your visit to Lavash</h2>
           <p className="text-text-smoke">Lavash Lebanese Cuisine serves chicken shawarma, shish tawook, falafel, hommous, and Lebanese street food at 46042 Michigan Ave, Canton, MI 48188.</p>
-          <h3 className="font-display text-2xl">Is Lavash Halal?</h3>
-          <p className="text-text-smoke">Yes. Lavash Lebanese Cuisine is 100% Certified Halal.</p>
-          <h3 className="font-display text-2xl">How can I order?</h3>
-          <p className="text-text-smoke">Browse our <a href="/menu" className="text-white underline">menu</a> and order through Toast. For catering and large orders, see our <a href="/catering" className="text-white underline">catering page</a> or call <a href="tel:+17344951115" className="text-white underline">(734) 495-1115</a>.</p>
-          <h3 className="font-display text-2xl">When does Lavash close?</h3>
-          <p className="text-text-smoke">Open until 9 PM everyday. See our <a href="/location" className="text-white underline">location and weekly opening hours</a> for your visit.</p>
+          <h3 className="font-display text-2xl">Is Lavash Lebanese Cuisine halal?</h3>
+          <p className="text-text-smoke">Yes. Lavash Lebanese Cuisine is a 100% halal restaurant in Canton, Michigan.</p>
+          <h3 className="font-display text-2xl">How do I order pickup or delivery?</h3>
+          <p className="text-text-smoke">Browse our <a href="/menu" className="text-white underline">Lebanese menu</a>, then <a href="https://order.toasttab.com/online/lavash-lebanese-cuisine-46042-michigan-ave" target="_blank" rel="noopener noreferrer" className="text-white underline">order through Toast</a> for current prices and available pickup or delivery options.</p>
+          <h3 className="font-display text-2xl">Does Lavash offer catering?</h3>
+          <p className="text-text-smoke">Yes. We offer halal Lebanese catering for office lunches, family gatherings, and events. Visit our <a href="/catering" className="text-white underline">catering page</a> to order on ezCater, or call <a href="tel:+17344951115" className="text-white underline">(734) 495-1115</a> to discuss your group.</p>
+          <h3 className="font-display text-2xl">Where is Lavash, and when is it open?</h3>
+          <p className="text-text-smoke">Find us at 46042 Michigan Ave, Canton, MI 48188. We close at 9 PM every day; opening times vary by day. See our <a href="/location" className="text-white underline">weekly hours and directions</a> before your visit.</p>
+          <h3 className="font-display text-2xl">Where can I check ingredients or dietary requirements?</h3>
+          <p className="text-text-smoke">Browse the <a href="/menu" className="text-white underline">menu descriptions</a> and call <a href="tel:+17344951115" className="text-white underline">(734) 495-1115</a> to discuss ingredients, allergies, or dietary requirements before ordering.</p>
         </div>
       </section>
       <GoogleReviews />
